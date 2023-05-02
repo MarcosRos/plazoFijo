@@ -1,0 +1,57 @@
+<p-card>
+    <div>
+        <h1>Calculadora de plazos fijos</h1>
+        <p>El funcionamiento es simple, ingresas tu sueldo
+            (o la parte que tienes pensado invertir al menos), El TNA actual y la cantidad de meses que pondras el plazo
+            fijo (se calcula en periodos de
+            30 dias, por lo que IRL tendras que retirar el plazo fijo y cargar de nuevo el mismo)</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="sueldo" class="form-label">Sueldo: &nbsp;</label>
+                <p-inputNumber [(ngModel)]="sueldo" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2"
+                    [maxFractionDigits]="5"> </p-inputNumber>&nbsp;$
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="tna" class="form-label">TNA: &nbsp;</label>
+                <p-inputNumber [(ngModel)]="tna" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2"
+                    [maxFractionDigits]="5" [disabled]="true"> </p-inputNumber>&nbsp;%
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="meses" class="form-label">Meses: &nbsp;</label>
+                <p-inputNumber inputId="integeronly" [(ngModel)]="meses"> </p-inputNumber>
+            </div>
+        </div>
+
+
+        <div class="col-1"></div>
+        <div class="col-10">
+            <button pButton pRipple class="p-button-success" style="width: 100%;" (click)="calcular()"
+                label="Calcular"></button>
+        </div>
+
+        <div class="col-12">
+            <div class="grid text-center">
+                <div class="col-6">
+                    <h5 *ngIf="mostrarResultado == true">Total de ganancias con la Inversion: {{totalGananciasString}}</h5>
+                </div>
+                <div class="col-6">
+                    <h5 *ngIf="mostrarResultado == true">Dinero Total: {{dineroAcumuladoString}}</h5>
+                </div>
+                <div class="col-12 text-center">
+                    <h5 *ngIf="mostrarResultado == true">Ganancia en el ultimo mes: {{gananciasPorMesString}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <small>La calculadora NO es 100% precisa, ya que no toma en cuenta posibles cambios al TNA a mitad de la inversion</small>
+</p-card>
