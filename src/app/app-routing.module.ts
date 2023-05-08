@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalculadoraComponent } from './components/calculadora/calculadora.component';
 
 const routes: Routes = [
-  {path:'calculadora' , component:CalculadoraComponent}
+  {path:'calculadora' , component:CalculadoraComponent},
+  {path:'' , component:CalculadoraComponent},
+  {path:'*' , component:CalculadoraComponent}
 ];
 
 @NgModule({
