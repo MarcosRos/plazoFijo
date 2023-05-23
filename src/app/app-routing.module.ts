@@ -5,7 +5,7 @@ import { CalculadoraComponent } from './components/calculadora/calculadora.compo
 const routes: Routes = [
   {path:'calculadora' , component:CalculadoraComponent},
   {path:'' , component:CalculadoraComponent},
-  {path:'*' , component:CalculadoraComponent}
+  {path:'**' , component:CalculadoraComponent}
 ];
 
 @NgModule({
