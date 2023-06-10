@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent {
-  tna: number = 91
+  tna: number = 97
   meses!: number
   sueldo!: number
   dineroAcumulado:number = 0
